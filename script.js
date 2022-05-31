@@ -33,7 +33,7 @@ for (let i = 0; i < 5; i++) {
 contenitoreNumeri.innerHTML = numeriCasuali.join(' - ')
 
 //creo una costante per i secondi totali
-let secondiRestanti = 10
+let secondiRestanti = 30
 
 //creo la funzione per il countdown di trenta secondi
 const contoAllaRovescia = setInterval(function() {
@@ -76,7 +76,7 @@ setTimeout(function () {
             }
         }
         console.log(numeriIndovinati)
-}, 11000)
+}, 33000)
 
 
 

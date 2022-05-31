@@ -6,12 +6,16 @@ const contenitoreNumeri = document.getElementById('numeri-casuali')
 //recupero il contenitore dove mettere il countdown
 const contenitoreCountdown = document.getElementById('conto-alla-rovescia')
 
-//creo due array, uno con i numeri generati dal pc
+//recupero il contenitore per stampare il risultato
+const risultato = document.getElementById('risultato')
+
+//creo tre array
+//uno con i numeri generati dal pc
 const numeriCasuali = []
 //uno che prenda i numeri inseriti dall'utente
 const numeriUtente = []
-
-let partitaVinta = false
+//uno con i numeri indovinati
+const numeriIndovinati = []
 
 //creo un ciclo per generare cinque numeri random
 for (let i = 0; i < 5; i++) {
@@ -29,7 +33,7 @@ for (let i = 0; i < 5; i++) {
 contenitoreNumeri.innerHTML = numeriCasuali.join(' - ')
 
 //creo una costante per i secondi totali
-let secondiRestanti = 30
+let secondiRestanti = 10
 
 //creo la funzione per il countdown di trenta secondi
 const contoAllaRovescia = setInterval(function() {
@@ -47,15 +51,13 @@ const contoAllaRovescia = setInterval(function() {
     }
 }, 1000)
 
-setTimeout(function () {
-
 //dopo i trenta secondi, appaiono i prompt per inserire i numeri visti
-    //function partitaNumeri() {
+setTimeout(function () {
 
         for (let i = 0; i < 5; i++) {
             const numeriScelti = +prompt('Adesso scrivi i numeri che hai visto.')
 
-            if (!isNaN(numeriScelti) ) {
+            if (!isNaN(numeriScelti)) {
                 numeriUtente.push(numeriScelti)
             } else {
                 i--
@@ -63,12 +65,20 @@ setTimeout(function () {
         }
         console.log(numeriUtente)
 
-        //analizzo array numeri utente, per vedere se i suoi numeri sono nell'array casuale
-        for (let i = 0; i <= numeriUtente.length; i++) {
-        }
-    //}
+        //analizzo array numeri utente, per vedere se sono nell'array casuale
+        for (let i = 0; i < numeriUtente.length; i++) {
+            console.log(numeriUtente[i])
+            console.log(numeriCasuali[i])
 
-}, 35000)
+            if (numeriUtente[i].toString() === numeriCasuali[i].toString()) {
+                numeriIndovinati.push(numeriUtente[i])
+                risultato.innerHTML = `Complimenti, hai indovinato ${numeriIndovinati.length} numeri, ossia: ${numeriIndovinati.join(', ')}!`
+            }
+        }
+        console.log(numeriIndovinati)
+}, 11000)
+
+
 
 
 /*

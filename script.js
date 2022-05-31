@@ -87,5 +87,5 @@ Visualizzare in pagina (html) 5 numeri casuali. x
 Avviare un timer di 30 secondi x
 Dopo 30 secondi, nascondere i numeri. x
 L’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite un prompt(). x
-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati. x
 */
